@@ -34,3 +34,26 @@ jobs:
       with:
         name: app-artifacts
         path: ./publish
+
+  deploy:
+    runs-on: self-hosted
+    needs: build
+
+    steps:
+    - name: Download the artifacts from Github (from the build job)
+      uses: actions/download-artifact@v4
+      with:
+        name: app-artifacts
+
+    - name: Stop the application service
+      run: |
+        sudo systemctl stop dotnetapp.service        
+
+    - name: Deploy the application
+      run: |
+        sudo rm -Rf /opt/dotnetapp || true
+        sudo cp -r /home/azureuser/actions-runner/_work/dotnetapp/dotnetapp/ /opt/dotnetapp        
+
+    - name: Start the application service
+      run: |
+        sudo systemctl start dotnetapp.service
