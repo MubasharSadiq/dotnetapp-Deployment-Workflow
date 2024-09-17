@@ -1,6 +1,9 @@
 # This workflow will build the GithubActionsDemo project
 
 name: dotnetapp
+permissions:
+  actions: write
+  contents: read
 
 on:
   push:
@@ -28,6 +31,9 @@ jobs:
       run: |
         dotnet build --no-restore
         dotnet publish -c Release -o ./publish        
+
+    - name: List files in ./publish
+      run: ls -l ./publish
 
     - name: Upload app artifacts to Github
       uses: actions/upload-artifact@v4
