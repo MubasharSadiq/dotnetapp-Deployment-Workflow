@@ -711,8 +711,6 @@ az deployment group create \
 echo "Deployment completed successfully!"
 ```
 
-[Click here to access the full Deployment Script](#deployment-script)
-
 [Back to top](#table-of-contents)
 
 ---
