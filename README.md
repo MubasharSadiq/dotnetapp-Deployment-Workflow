@@ -6,7 +6,7 @@
 
 # **Deploying a .NET Application on Azure with ARM Templates, Bastion Host, Reverse Proxy, and CI/CD**
 
-This guide demonstrates the process of provisioning and deploying a .NET application on Azure using ARM templates and setting up a CI/CD pipeline with GitHub Actions. The deployment includes infrastructure provisioning, reverse proxy configuration, and automated application deployment.
+This guide demonstrates the process of provisioning and deploying a .NET application on Azure using ARM templates and setting up a CI/CD pipeline with GitHub Actions. The deployment includes infrastructure provisioning, reverse proxy configuration, bastion host, and automated application deployment.
 
 ---
 
